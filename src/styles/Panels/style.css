@@ -1,0 +1,15 @@
+table {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  border: solid;
+  font-size: 22px;
+}
+
+th,
+tr,
+td {
+  height: 50px;
+  border: solid;
+}
