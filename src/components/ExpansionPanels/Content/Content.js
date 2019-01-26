@@ -7,8 +7,7 @@ import PropTypes from "prop-types"
 import { Text } from "styles/Panels/styles"
 //components
 import Picture from "components/ExpansionPanels/Content/components/Image"
-import Table from "components/ExpansionPanels/Content/components/Table"
-
+import { TableComp }  from 'components/Tables/Tables'
 const Typography = ({ active, act }) => (
   <Fragment>
     {act === TabsContent.FIRST && active === TabsContent.FIRST && (
@@ -19,7 +18,7 @@ const Typography = ({ active, act }) => (
         voluptatibus voluptatum?
       </Text>
     )}
-    {act === TabsContent.SECOND && active === TabsContent.SECOND && <Table />}
+    {act === TabsContent.SECOND && active === TabsContent.SECOND && <TableComp />}
     {act === TabsContent.THIRD && active === TabsContent.THIRD && (
       <Text>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque

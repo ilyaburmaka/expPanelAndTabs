@@ -14,7 +14,7 @@ class App extends Component {
 
   handleSubmit = activeTab => () => {
     this.setState({ activeTab })
-  }
+  };
 
   render() {
     const { activeTab } = this.state
