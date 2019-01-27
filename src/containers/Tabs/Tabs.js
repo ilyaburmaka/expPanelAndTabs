@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 // styles
-import { Wrapper } from 'styles/Tabs/styles'
+import { Wrapper,AppBar,Content } from 'styles/Tabs/styles'
 // constants
 import { activeTabs, textForTab } from 'constants/Tabs/Constant'
 // components
@@ -20,6 +20,7 @@ class App extends Component {
     const { activeTab } = this.state
     return (
       <Wrapper>
+    <AppBar>
         {textForTab.map(({ value, title }) => (
           <TabTitles
             key={value}
@@ -28,9 +29,10 @@ class App extends Component {
             title={title}
           />
         ))}
-        <div>
+    </AppBar>
+        <Content>
           <TabsContent tab={activeTab} />
-        </div>
+        </Content>
       </Wrapper>
     )
   }

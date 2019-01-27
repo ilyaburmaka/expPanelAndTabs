@@ -2,12 +2,8 @@ import styled, { keyframes } from 'styled-components'
 
 const Wrapper = styled.div`
   min-height: 0;
-  position: relative;
-  left: 50%;
-  margin: 29px 40px 0px 0px;
-  transform: translate(-50%, 0);
   background-color: #fefffa;
-  padding: 30px;
+  padding:10px;
 `
 const rotate = keyframes`
   from {
@@ -19,20 +15,17 @@ const rotate = keyframes`
   }
 `
 const Div = styled.div`
-    font-size: 30px;
-    line-height: 34px;
-    font-weight: 300;
-    width:99%;
-    height:40px;
-    letter-spacing: 1px;
+    font-size: 33px;
+    line-height: 44px;
+    font-weight: 500;
+    width:100%;
+    height:45px;
     display: block;
-    background-color: #fefffa;
-    margin: 0;
     cursor: pointer;
     ::after{
-        float:right
+        float:right;
         content: "↓";
-        animation: ${rotate} 2s;
+        animation: ${rotate} 2.5s;
         animation-direction: reverse;
     }
 `
@@ -53,13 +46,10 @@ const Text = styled.p`
 const PictDiv = styled.div`
   margin: 20px 0px 0px 200px;
 `
-const Tables = styled.table`
-  width: 100%;
-  font-size: 22px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  text-align: center;
-  border: double;
-`
 
-export { Wrapper, Div, Text, PictDiv, Tables }
+const WrapPanel = styled.div`
+  width:100%;
+  border-bottom:2px solid grey;
+  margin-bottom:15px;
+`
+export { Wrapper, Div, Text, PictDiv, WrapPanel }

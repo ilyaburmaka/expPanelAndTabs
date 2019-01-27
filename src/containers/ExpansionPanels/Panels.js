@@ -5,7 +5,7 @@ import { NameTabs } from 'constants/ExpansionPanels/ExpansionPanels';
 import ExpansionPanel from 'components/ExpansionPanels/Panels/ExpansionPanels';
 import Typography from 'components/ExpansionPanels/Content/Content';
 // styles
-import { Wrapper } from 'styles/Panels/styles';
+import { Wrapper,WrapPanel } from 'styles/Panels/styles';
 
 
 class Panels extends Component {
@@ -23,14 +23,15 @@ class Panels extends Component {
     const { activeTab } = this.state;
     return (
       <Wrapper>
-        <h1>Accordion TASK</h1>
         {NameTabs.map((item, index) => (
           <Fragment key={index}>
+            <WrapPanel>
             <ExpansionPanel
               header={item.mainTitle}
               handleTabChange={this.handleSubmit(item.value)}
             />
             <Typography active={item.value} act={activeTab} />
+            </WrapPanel>
           </Fragment>
         ))}
       </Wrapper>
