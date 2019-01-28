@@ -4,8 +4,8 @@ import { Button } from 'styles/Tabs/styles'
 // libs
 import PropTypes from 'prop-types'
 
-const TabTitles = ({ isActiveTab, handleTabChange, title }) => (
-  <Button inputColor={isActiveTab} onClick={handleTabChange}>
+const TabTitles = ({ isActiveTab, handleActive, title }) => (
+  <Button inputColor={isActiveTab} onClick={handleActive}>
     {title}
   </Button>
 )

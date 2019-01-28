@@ -1,41 +1,42 @@
-import React, { Component } from "react";
+import React, { Component,Fragment } from 'react'
 // styles
-import { Wrapper, AppBar, Content } from "styles/Tabs/styles";
+import { Wrapper,AppBar,Content } from 'styles/Tabs/styles'
 // constants
-import { activeTabs, textForTab } from "constants/Tabs/Constant";
+import { activeTabs, textForTab } from 'constants/Tabs/Constant'
 // components
-import TabsContent from "components/Tabs/Content/TabContent";
-import TabTitles from "components/Tabs/Button/Button";
-
+import TabsContent from 'components/Tabs/Content/TabContent'
+import TabTitles from 'components/Tabs/Button/Button'
+import Tabses from 'containers/Tabs/Button'
 class App extends Component {
-  state = {
-    activeTab: activeTabs.FIRST
-  };
 
-  handleSubmit = activeTab => () => {
-    this.setState({ activeTab });
-  };
-
-  render() {
-    const { activeTab } = this.state;
+   render() {
     return (
       <Wrapper>
-        <AppBar>
-          {textForTab.map(({ value, title }) => (
-            <TabTitles
-              key={value}
-              isActiveTab={activeTab === value}
-              handleTabChange={this.handleSubmit(value)}
-              title={title}
-            />
-          ))}
-        </AppBar>
-        <Content>
-          <TabsContent tab={activeTab} />
-        </Content>
+          <Tabses
+              Tab={'SECOND'}
+              TabData={textForTab}
+          >
+            {({active,handleActive,tabData}) => (
+               <Fragment>
+                 <AppBar>
+                   {textForTab.map(({ value, title }) => (
+                       <TabTitles
+                           key={value}
+                           isActiveTab={active === value}
+                           handleActive={handleActive}
+                           title={title}
+                       />
+                   ))}
+                 </AppBar>
+                 <Content>
+                   <TabsContent tab={active} />
+                 </Content>
+               </Fragment>
+            )}
+          </Tabses>
       </Wrapper>
-    );
+    )
   }
 }
 
-export default App;
+export default App
