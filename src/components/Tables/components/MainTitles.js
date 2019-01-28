@@ -6,7 +6,7 @@ import {MainCell} from "styles/Tables/style"
 const MainNames = ({ names }) => (
   <Fragment>
     <MainCell isLeft={false}>
-      <strong>{names}</strong>
+    {names}
     </MainCell>
   </Fragment>
 )

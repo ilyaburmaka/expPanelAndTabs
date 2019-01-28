@@ -1,16 +1,16 @@
-import React, { Fragment } from 'react'
+import React, { Fragment } from "react";
 // styles
-import { Grid } from 'styles/Tables/style.js'
+import { Grid } from "styles/Tables/style.js";
 // components only for Tables
-import { MainNames } from 'components/Tables/components/MainTitles'
-import { ContentText } from 'components/Tables/components/ContentsTables'
+import { MainNames } from "components/Tables/components/MainTitles";
+import { ContentText } from "components/Tables/components/ContentsTables";
 
-const TableComp = ({TableHead,TableCell}) => {
-  let b = 0
-  TableHead.map(key => (b += Object.keys(key).length))
+const TableComp = ({ TableHead, TableCell }) => {
+  let countContent = 0;
+  TableHead.map(key => (countContent += Object.keys(key).length));
   return (
     <Fragment>
-      {Number.isInteger(b / Object.keys(TableHead).length) ? (
+      {Number.isInteger(countContent / Object.keys(TableHead).length) ? (
         <Grid howRow={Object.keys(TableHead).length}>
           {TableHead.map((item, index) => (
             <MainNames key={index} names={item.title} />
@@ -20,10 +20,10 @@ const TableComp = ({TableHead,TableCell}) => {
           ))}
         </Grid>
       ) : (
-        alert('Таблица повреждена, проверьте правильность данных')
+        alert("Таблица повреждена, проверьте правильность данных")
       )}
     </Fragment>
-  )
-}
+  );
+};
 
-export { TableComp }
+export { TableComp };

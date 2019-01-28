@@ -8,7 +8,6 @@ const ContentText = ({ content }) => {
       {Object.keys(content).map(key =>
           <ContentCell isLeft = {key==="name"} key={key}>
             {content[key]}
-
           </ContentCell>
       )}
     </Fragment>
