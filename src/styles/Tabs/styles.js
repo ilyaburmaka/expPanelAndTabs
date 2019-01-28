@@ -21,7 +21,7 @@ const Button = styled.button`
   font-size: 22px;
   background: ${props => (props.inputColor ? 'red' : '#2196f3')};
   border: none;
-  animation: 2s;
+  animation: 3s;
 `
 
 const Img = styled.img`
