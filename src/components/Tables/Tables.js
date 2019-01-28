@@ -2,23 +2,22 @@ import React, { Fragment } from 'react'
 // styles
 import { Grid } from 'styles/Tables/style.js'
 // const
-import { mainContent, contentTable } from 'constants/Tables/Tables'
 // components only for Tables
 import { MainNames } from 'components/Tables/components/MainTitles'
 import { ContentText } from 'components/Tables/components/ContentsTables'
 
-const TableComp = () => {
+const TableComp = ({TableHead,TableCell}) => {
   let b = 0
-  contentTable.map(key => (b += Object.keys(key).length))
+  TableHead.map(key => (b += Object.keys(key).length))
   return (
     <Fragment>
-      {Number.isInteger(b / Object.keys(mainContent).length) ? (
-        <Grid howRow={Object.keys(mainContent).length}>
-          {mainContent.map((item, index) => (
+      {Number.isInteger(b / Object.keys(TableHead).length) ? (
+        <Grid howRow={Object.keys(TableHead).length}>
+          {TableHead.map((item, index) => (
             <MainNames key={index} names={item.title} />
           ))}
 
-          {contentTable.map((item, index) => (
+          {TableCell.map((item, index) => (
             <ContentText key={index} content={item} />
           ))}
         </Grid>
