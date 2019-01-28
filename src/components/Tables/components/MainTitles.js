@@ -1,12 +1,13 @@
 import React, { Fragment } from 'react'
 //libs
 import PropTypes from 'prop-types'
+import {MainCell} from "styles/Tables/style"
 
 const MainNames = ({ names }) => (
   <Fragment>
-    <span>
+    <MainCell isLeft={false}>
       <strong>{names}</strong>
-    </span>
+    </MainCell>
   </Fragment>
 )
 

@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react'
 // styles
 import { Grid } from 'styles/Tables/style.js'
-// const
 // components only for Tables
 import { MainNames } from 'components/Tables/components/MainTitles'
 import { ContentText } from 'components/Tables/components/ContentsTables'
@@ -16,7 +15,6 @@ const TableComp = ({TableHead,TableCell}) => {
           {TableHead.map((item, index) => (
             <MainNames key={index} names={item.title} />
           ))}
-
           {TableCell.map((item, index) => (
             <ContentText key={index} content={item} />
           ))}
