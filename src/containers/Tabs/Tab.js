@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 // constants
 import PropTypes from "prop-types";
 
-class Tabses extends Component {
+class TabsRend extends Component {
   static propTypes = {
     Tab: PropTypes.string.isRequired,
     TabData: PropTypes.arrayOf(PropTypes.object).isRequired
@@ -36,4 +36,4 @@ class Tabses extends Component {
   }
 }
 
-export default Tabses;
+export default TabsRend;

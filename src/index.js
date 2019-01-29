@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from 'containers/Tabs/Tabs.js';
+import App from 'components//Tabs/Tabs';
 import * as serviceWorker from 'serviceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));

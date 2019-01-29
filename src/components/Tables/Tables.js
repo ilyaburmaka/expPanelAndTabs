@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 // styles
 import { Grid } from "styles/Tables/style.js";
-// components only for Tables
+// components
 import { MainNames } from "components/Tables/components/MainTitles";
 import { ContentText } from "components/Tables/components/ContentsTables";
 
@@ -26,4 +26,4 @@ const TableComp = ({ TableHead, TableCell }) => {
   );
 };
 
-export { TableComp };
+export default TableComp;

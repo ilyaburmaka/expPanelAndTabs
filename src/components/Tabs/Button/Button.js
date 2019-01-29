@@ -5,7 +5,7 @@ import { Button } from "styles/Tabs/styles";
 import PropTypes from "prop-types";
 
 const TabTitles = ({ active, handleActive, TabData }) =>
-    TabData.map((item, index) => (
+  TabData.map((item, index) => (
     <Button
       key={index}
       inputColor={active === item.value}
@@ -17,7 +17,7 @@ const TabTitles = ({ active, handleActive, TabData }) =>
 
 TabTitles.propTypes = {
   active: PropTypes.string.isRequired,
-  handleActive : PropTypes.func.isRequired,
+  handleActive: PropTypes.func.isRequired,
   TabData: PropTypes.array.isRequired
 };
 

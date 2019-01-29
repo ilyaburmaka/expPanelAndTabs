@@ -1,18 +1,17 @@
-import React, { Fragment } from 'react'
+import React, { Fragment } from "react";
 //libs
-import PropTypes from 'prop-types'
-import {MainCell} from "styles/Tables/style"
+import PropTypes from "prop-types";
+// style(s)
+import { MainCell } from "styles/Tables/style";
 
 const MainNames = ({ names }) => (
   <Fragment>
-    <MainCell isLeft={false}>
-    {names}
-    </MainCell>
+    <MainCell isLeft={false}>{names}</MainCell>
   </Fragment>
-)
+);
 
 MainNames.propTypes = {
   names: PropTypes.string.isRequired
-}
+};
 
-export { MainNames }
+export { MainNames };

@@ -1,14 +1,14 @@
-import React, { Fragment } from "react"
+import React, { Fragment } from "react";
 // constants
-import { TabsContent } from "constants/ExpansionPanels/ExpansionPanels"
-import {contentTable, mainContent} from "constants/Tables/Tables"
+import { TabsContent } from "constants/ExpansionPanels/ExpansionPanels";
+import { contentTable, mainContent } from "constants/Tables/Tables";
 // libs
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 // styles
-import { Text } from "styles/Panels/styles"
+import { Text } from "styles/Panels/styles";
 //components
-import Picture from "components/ExpansionPanels/Content/components/Image"
-import { TableComp }  from 'components/Tables/Tables'
+import Picture from "components/ExpansionPanels/Content/components/Image";
+import TableComp from "components/Tables/Tables";
 
 const Typography = ({ active, act }) => (
   <Fragment>
@@ -20,7 +20,9 @@ const Typography = ({ active, act }) => (
         voluptatibus voluptatum?
       </Text>
     )}
-    {act === TabsContent.SECOND && active === TabsContent.SECOND && <TableComp TableHead={mainContent} TableCell={contentTable} />}
+    {act === TabsContent.SECOND && active === TabsContent.SECOND && (
+      <TableComp TableHead={mainContent} TableCell={contentTable} />
+    )}
     {act === TabsContent.THIRD && active === TabsContent.THIRD && (
       <Text>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque
@@ -31,11 +33,11 @@ const Typography = ({ active, act }) => (
     )}
     {act === TabsContent.FOURTH && active === TabsContent.FOURTH && <Picture />}
   </Fragment>
-)
+);
 
 Typography.propTypes = {
   active: PropTypes.string.isRequired,
   act: PropTypes.string.isRequired
-}
+};
 
-export default Typography
+export default Typography;
