@@ -1,19 +1,24 @@
-import React from 'react'
+import React from "react";
 // styles
-import { Button } from 'styles/Tabs/styles'
+import { Button } from "styles/Tabs/styles";
 // libs
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 
-const TabTitles = ({ isActiveTab, handleActive, title }) => (
-  <Button inputColor={isActiveTab} onClick={handleActive}>
-    {title}
-  </Button>
-)
+const TabTitles = ({ active, handleActive, TabData }) =>
+    TabData.map((item, index) => (
+    <Button
+      key={index}
+      inputColor={active === item.value}
+      onClick={handleActive}
+    >
+      {item.title}
+    </Button>
+  ));
 
 TabTitles.propTypes = {
-  isActiveTab: PropTypes.bool.isRequired,
-  handleTabChange: PropTypes.func.isRequired,
-  title: PropTypes.string.isRequired,
-}
+  active: PropTypes.string.isRequired,
+  handleActive: PropTypes.func.isRequired,
+  TabData: PropTypes.array.isRequired
+};
 
-export default TabTitles
+export default TabTitles;
