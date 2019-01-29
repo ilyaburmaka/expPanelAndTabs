@@ -9,7 +9,7 @@ const TabTitles = ({ active, handleActive, TabData }) =>
     <Button
       key={index}
       inputColor={active === item.value}
-      onClick={handleActive(item.value)}
+      onClick={() => handleActive(item.value)}
     >
       {item.title}
     </Button>

@@ -1,39 +1,23 @@
-import React, { Component, Fragment } from "react";
-// constants
+import React, { Fragment, useState } from "react";
+// lib
 import PropTypes from "prop-types";
 
-class TabsRend extends Component {
-  static propTypes = {
-    Tab: PropTypes.string.isRequired,
-    TabData: PropTypes.arrayOf(PropTypes.object).isRequired
-  };
+const TabsRend = ({ children, TabData }) => {
+  const [activeTab, setValue] = useState("SECOND");
+  return (
+    <Fragment>
+      {children({
+        active: activeTab,
+        handleSubmit: setValue,
+        TabData: TabData
+      })}
+    </Fragment>
+  );
+};
 
-  static defaultProps = {
-    Tab: 'DEAF',
-    TabData: [{ index: 'DEAF', title: 'default' }]
-  };
-
-  state = {
-    activeTab: this.props.Tab
-  };
-
-    handleClick = activeTab =>()=> {
-    this.setState({ activeTab });
-  };
-
-  render() {
-    const { children,TabData } = this.props;
-    const { activeTab } = this.state;
-    return (
-      <Fragment>
-        {children({
-          active: activeTab,
-          handleSubmit: this.handleClick,
-          TabData: TabData
-        })}
-      </Fragment>
-    );
-  }
-}
+TabsRend.propTypes = {
+  children: PropTypes.func.isRequired,
+  TabData: PropTypes.arrayOf(PropTypes.object).isRequired
+};
 
 export default TabsRend;
