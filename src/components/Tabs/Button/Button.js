@@ -9,7 +9,7 @@ const TabTitles = ({ active, handleActive, TabData }) =>
     <Button
       key={index}
       inputColor={active === item.value}
-      onClick={handleActive}
+      onClick={handleActive(item.value)}
     >
       {item.title}
     </Button>
@@ -17,7 +17,7 @@ const TabTitles = ({ active, handleActive, TabData }) =>
 
 TabTitles.propTypes = {
   active: PropTypes.string.isRequired,
-  handleActive: PropTypes.func.isRequired,
+  handleActive : PropTypes.func.isRequired,
   TabData: PropTypes.array.isRequired
 };
 

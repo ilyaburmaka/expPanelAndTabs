@@ -17,7 +17,7 @@ class Tabses extends Component {
     activeTab: this.props.Tab
   };
 
-  handleClick = activeTab => {
+    handleClick = activeTab =>()=> {
     this.setState({ activeTab });
   };
 

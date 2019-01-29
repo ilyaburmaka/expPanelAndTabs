@@ -1,6 +1,6 @@
 import React, { Component,Fragment } from 'react'
 // styles
-import { Wrapper,AppBar,Content } from 'styles/Tabs/styles'
+import {Wrapper, AppBar, Content, Button} from 'styles/Tabs/styles'
 // constants
 import { textForTab } from 'constants/Tabs/Constant'
 // components
