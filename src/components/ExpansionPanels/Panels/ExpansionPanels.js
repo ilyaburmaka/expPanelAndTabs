@@ -3,7 +3,6 @@ import React from "react";
 import PropTypes from "prop-types";
 //styles
 import { Div } from "styles/Panels/styles";
-
 const ExpansionPanel = ({ header, handleTabChange }) => (
   <Div onClick={handleTabChange}>{header}</Div>
 );

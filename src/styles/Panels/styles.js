@@ -2,8 +2,9 @@ import styled, { keyframes } from "styled-components";
 
 const Wrapper = styled.div`
   min-height: 0;
-  background-color: #fefffa;
+  background-color:  ${props=> props.color ? "#fefffa" : "#000"};
   padding: 10px;
+  color: ${props=> props.color ? "#000" : "#fefffa"};
 `;
 
 const rotate = keyframes`

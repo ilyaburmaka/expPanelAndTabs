@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState,useContext } from "react";
 // styles
 import {
   Wrapper,
@@ -13,6 +13,8 @@ import TabsContent from "components/Tabs/Content/TabContent";
 import TabTitles from "components/Tabs/Button/Button";
 // containers
 import TabsRend from "containers/Tabs/Tab";
+
+const ColorContext = React.createContext();
 
 const App = ({ MyActiveTab }) => {
   const [isLit, toggleLight] = useState(true);
@@ -35,10 +37,15 @@ const App = ({ MyActiveTab }) => {
                 {isLit ? "Ligth Mode" : "Dark Mode"}
               </ChangeColorButton>
             </AppBar>
-
-            <Content>
-              <TabsContent tab={active} />
-            </Content>
+              <ColorContext.Provider value={isLit}>
+              <ColorContext.Consumer>
+                  {value =>
+                      <Content color={value}>
+                          <TabsContent tab={active} color={value}/>
+                      </Content>
+                  }
+              </ColorContext.Consumer>
+              </ColorContext.Provider>
           </Fragment>
         )}
       </TabsRend>

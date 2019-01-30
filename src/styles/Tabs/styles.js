@@ -33,7 +33,7 @@ const Img = styled.img`
 `;
 
 const Content = styled.div`
-  background-color: #fefffa;
+  background-color: ${props=> props.color ? "#fefffa" : "#000"};
   border: 2px solid #a75555e6;
   border-radius: 5px;
 `;

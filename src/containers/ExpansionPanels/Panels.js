@@ -9,15 +9,15 @@ import { Wrapper, WrapPanel } from "styles/Panels/styles";
 // hoc(s)
 import withAccordion from "hoc/withAccordion";
 
-const Panels = ({ activeTab, handleSubmit }) => (
-  <Wrapper>
+const Panels = ({ activeTab, handleSubmit,color }) => (
+  <Wrapper color={color}>
     {NameTabs.map((item, index) => (
       <WrapPanel key={index}>
         <ExpansionPanel
           header={item.mainTitle}
           handleTabChange={handleSubmit(item.value)}
         />
-        <Typography active={item.value} act={activeTab} />
+        <Typography active={item.value} act={activeTab} color={color}/>
       </WrapPanel>
     ))}
   </Wrapper>

@@ -11,10 +11,10 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(${props => props.howRow}, 1fr);
   border: 1px solid rgba(224, 224, 224, 1);
-  color: rgba(0, 0, 0, 0.54);
+  color:  ${props=> props.color ? "#000" : "#fff"};
   font-size: 1rem;
   font-weight: 500;
-  background: #fff;
+  background: ${props=> props.color ? "#fff" : "#000"};
   padding: 15px;
 
   ${MainCell} {

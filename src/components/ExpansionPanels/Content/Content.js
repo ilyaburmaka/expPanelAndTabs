@@ -10,7 +10,7 @@ import { Text } from "styles/Panels/styles";
 import Picture from "components/ExpansionPanels/Content/components/Image";
 import TableComp from "components/Tables/Tables";
 
-const Typography = ({ active, act }) => (
+const Typography = ({ active, act,color }) => (
   <Fragment>
     {act === TabsContent.FIRST && active === TabsContent.FIRST && (
       <Text>
@@ -21,7 +21,7 @@ const Typography = ({ active, act }) => (
       </Text>
     )}
     {act === TabsContent.SECOND && active === TabsContent.SECOND && (
-      <TableComp TableHead={mainContent} TableCell={contentTable} />
+      <TableComp TableHead={mainContent} TableCell={contentTable} color={color} />
     )}
     {act === TabsContent.THIRD && active === TabsContent.THIRD && (
       <Text>

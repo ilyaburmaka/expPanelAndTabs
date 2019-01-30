@@ -12,11 +12,11 @@ import myPict from "additionals/pictureForTab.png";
 import Panels from "containers/ExpansionPanels/Panels";
 import TableComp from "components/Tables/Tables";
 
-const TabsContent = ({ tab }) => (
+const TabsContent = ({ tab,color }) => (
   <Fragment>
-    {tab === activeTabs.FIRST && <Panels />}
+    {tab === activeTabs.FIRST && <Panels color={color}/>}
     {tab === activeTabs.SECOND && (
-      <TableComp TableHead={mainContent} TableCell={contentTable} />
+      <TableComp TableHead={mainContent} TableCell={contentTable}  color={color}/>
     )}
     {tab === activeTabs.THIRD && <Img src={myPict} alt="Picture" />}
   </Fragment>
