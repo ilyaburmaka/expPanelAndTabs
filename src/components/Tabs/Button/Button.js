@@ -4,12 +4,14 @@ import { Button } from "styles/Tabs/styles";
 // libs
 import PropTypes from "prop-types";
 
-const TabTitles = ({ active, handleActive, TabData }) =>
+const TabTitles = ({ active, handleActive, TabData, value, isLit }) =>
   TabData.map((item, index) => (
     <Button
       key={index}
       inputColor={active === item.value}
       onClick={() => handleActive(item.value)}
+      ModeColor={value}
+      color={isLit}
     >
       {item.title}
     </Button>

@@ -4,23 +4,26 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 
 const Wrapper = styled.div`
-  width: 100%;
+  width: 100vw;
   height: 100%;
-  background: #e3e3e3;
+  background: ${props => (props.isLit ? " #e3e3e3" : "#000")};
   position: absolute;
 `;
 
 const AppBar = styled.div`
-  background-color: #2196f3;
+  border: 2px solid #a75555e6;
+  margin-bottom: 5px;
+  background-color: ${props => (props.isLit ? "#fff" : "#000")};
   height: 55px;
 `;
 
 const Button = styled.button`
   width: 130px;
   height: 100%;
-  color: #fff;
+  color: ${props => (props.color ? "#000" : "#fff")};
   font-size: 22px;
-  background: ${props => (props.inputColor ? "red" : "#2196f3")};
+  background: ${props =>
+    props.inputColor ? "#a75555e6" : props.color ? "#fff" : "#000"};
   border: none;
   animation: 3s;
 `;
@@ -31,12 +34,22 @@ const Img = styled.img`
 
 const Content = styled.div`
   background-color: #fefffa;
-  border: 2px solid red;
+  border: 2px solid #a75555e6;
   border-radius: 5px;
+`;
+const ChangeColorButton = styled.button`
+  width: 130px;
+  height: 100%;
+  float: right;
+  margin-right: 50px;
+  color: ${props => (props.color ? "#000" : "#fff")};
+  background: ${props => (props.color ? "#fff" : "#000")};
+  border: none;
+  font-size: 22px;
 `;
 
 Button.propTypes = {
   inputColor: PropTypes.bool.isRequired
 };
 
-export { Wrapper, Button, Img, AppBar, Content };
+export { Wrapper, Button, Img, AppBar, Content, ChangeColorButton };

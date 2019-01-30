@@ -12,11 +12,11 @@ const Grid = styled.div`
   grid-template-columns: repeat(${props => props.howRow}, 1fr);
   border: 1px solid rgba(224, 224, 224, 1);
   color: rgba(0, 0, 0, 0.54);
-  font-size: 0.75rem;
+  font-size: 1rem;
   font-weight: 500;
   background: #fff;
   padding: 15px;
-  
+
   ${MainCell} {
     &:nth-child(1) {
       text-align: left;
