@@ -1,6 +1,7 @@
 //libs
 import styled from "styled-components";
 import PropTypes from "prop-types";
+
 const MainCell = styled.span``;
 
 const ContentCell = styled.span`
@@ -11,10 +12,10 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(${props => props.howRow}, 1fr);
   border: 1px solid rgba(224, 224, 224, 1);
-  color:  ${props=> props.color ? "#000" : "#fff"};
+  color:  ${props=> props.ThemeColor ? "#000" : "#fff"};
   font-size: 1rem;
   font-weight: 500;
-  background: ${props=> props.color ? "#fff" : "#000"};
+  background: ${props=> props.ThemeColor ? "#fff" : "#000"};
   padding: 15px;
 
   ${MainCell} {
@@ -39,7 +40,8 @@ const Grid = styled.div`
 `;
 
 Grid.propTypes = {
-  howRow: PropTypes.number.isRequired
+  howRow: PropTypes.number.isRequired,
+  ThemeColor: PropTypes.bool.isRequired
 };
 
 ContentCell.propTypes = {

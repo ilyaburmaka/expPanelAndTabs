@@ -1,10 +1,11 @@
 import styled, { keyframes } from "styled-components";
+import PropTypes from "prop-types";
 
 const Wrapper = styled.div`
   min-height: 0;
-  background-color:  ${props=> props.color ? "#fefffa" : "#000"};
+  background-color: ${props => (props.ThemeColor ? "#fefffa" : "#000")};
   padding: 10px;
-  color: ${props=> props.color ? "#000" : "#fefffa"};
+  color: ${props => (props.ThemeColor ? "#000" : "#fefffa")};
 `;
 
 const rotate = keyframes`
@@ -58,5 +59,9 @@ const WrapPanel = styled.div`
   border-bottom: 2px solid grey;
   margin-bottom: 15px;
 `;
+
+Wrapper.propTypes = {
+  ThemeColor: PropTypes.bool.isRequired
+};
 
 export { Wrapper, Div, Text, PictDiv, WrapPanel };

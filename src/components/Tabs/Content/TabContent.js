@@ -12,18 +12,23 @@ import myPict from "additionals/pictureForTab.png";
 import Panels from "containers/ExpansionPanels/Panels";
 import TableComp from "components/Tables/Tables";
 
-const TabsContent = ({ tab,color }) => (
+const TabsContent = ({ tab, ThemeColor }) => (
   <Fragment>
-    {tab === activeTabs.FIRST && <Panels color={color}/>}
+    {tab === activeTabs.FIRST && <Panels ThemeColor={ThemeColor} />}
     {tab === activeTabs.SECOND && (
-      <TableComp TableHead={mainContent} TableCell={contentTable}  color={color}/>
+      <TableComp
+        TableHead={mainContent}
+        TableCell={contentTable}
+        ThemeColor={ThemeColor}
+      />
     )}
     {tab === activeTabs.THIRD && <Img src={myPict} alt="Picture" />}
   </Fragment>
 );
 
 TabsContent.propTypes = {
-  tab: PropTypes.string.isRequired
+  tab: PropTypes.string.isRequired,
+  ThemeColor: PropTypes.bool.isRequired
 };
 
 export default TabsContent;

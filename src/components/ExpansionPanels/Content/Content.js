@@ -10,7 +10,7 @@ import { Text } from "styles/Panels/styles";
 import Picture from "components/ExpansionPanels/Content/components/Image";
 import TableComp from "components/Tables/Tables";
 
-const Typography = ({ active, act,color }) => (
+const Typography = ({ active, act, ThemeColor }) => (
   <Fragment>
     {act === TabsContent.FIRST && active === TabsContent.FIRST && (
       <Text>
@@ -21,7 +21,11 @@ const Typography = ({ active, act,color }) => (
       </Text>
     )}
     {act === TabsContent.SECOND && active === TabsContent.SECOND && (
-      <TableComp TableHead={mainContent} TableCell={contentTable} color={color} />
+      <TableComp
+        TableHead={mainContent}
+        TableCell={contentTable}
+        ThemeColor={ThemeColor}
+      />
     )}
     {act === TabsContent.THIRD && active === TabsContent.THIRD && (
       <Text>
@@ -37,7 +41,8 @@ const Typography = ({ active, act,color }) => (
 
 Typography.propTypes = {
   active: PropTypes.string.isRequired,
-  act: PropTypes.string.isRequired
+  act: PropTypes.string.isRequired,
+  ThemeColor: PropTypes.bool.isRequired
 };
 
 export default Typography;

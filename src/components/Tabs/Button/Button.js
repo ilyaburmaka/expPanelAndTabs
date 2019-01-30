@@ -4,14 +4,13 @@ import { Button } from "styles/Tabs/styles";
 // libs
 import PropTypes from "prop-types";
 
-const TabTitles = ({ active, handleActive, TabData, value, isLit }) =>
+const TabTitles = ({ active, handleActive, TabData, ThemeColor }) =>
   TabData.map((item, index) => (
     <Button
       key={index}
       inputColor={active === item.value}
       onClick={() => handleActive(item.value)}
-      ModeColor={value}
-      color={isLit}
+      ThemeColor={ThemeColor}
     >
       {item.title}
     </Button>
@@ -20,7 +19,8 @@ const TabTitles = ({ active, handleActive, TabData, value, isLit }) =>
 TabTitles.propTypes = {
   active: PropTypes.string.isRequired,
   handleActive: PropTypes.func.isRequired,
-  TabData: PropTypes.array.isRequired
+  TabData: PropTypes.array.isRequired,
+  ThemeColor: PropTypes.bool.isRequired
 };
 
 export default TabTitles;
